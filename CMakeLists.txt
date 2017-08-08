@@ -9,11 +9,11 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 # (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
 
-project(myproject)
+project(APP)
 
 # Set version information in a config.h file
-set(myproject_VERSION_MAJOR 1)
-set(myproject_VERSION_MINOR 0)
+set(APP_VERSION_MAJOR 1)
+set(APP_VERSION_MINOR 0)
 configure_file(
   "${PROJECT_SOURCE_DIR}/config.h.in"
   "${PROJECT_BINARY_DIR}/config.h"
@@ -21,7 +21,7 @@ configure_file(
 include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
-set(EXECUTABLE_NAME "myproject")
+set(EXECUTABLE_NAME "APP")
 add_executable(${EXECUTABLE_NAME} main.cpp)
 
 
@@ -62,6 +62,6 @@ install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 # CPack packaging
 include(InstallRequiredSystemLibraries)
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_SOURCE_DIR}/COPYING")
-set(CPACK_PACKAGE_VERSION_MAJOR "${myproject_VERSION_MAJOR}")
-set(CPACK_PACKAGE_VERSION_MINOR "${myproject_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_MAJOR "${APP_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${APP_VERSION_MINOR}")
 include(CPack)

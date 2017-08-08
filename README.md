@@ -1,11 +1,19 @@
 
-In /build run cmake ..
+Set SFML_ROOT environment variable to your SFML location
 
-On Windows run cmake -D SFML_STATIC_LIBRARIES=TRUE ..
+In /build run cmake .. (see OS specific commands below)
 
-On Mac (using Xcode) run cmake .. -GXcode
+In the IDE set APP as the startup project instead of ALL_BUILD
 
-In the IDE set the application as the startup project instead of ALL_BUILD
+Update the COPYING document as needed
 
-On Windows copy openal32.dll to /build
 
+Windows Specific:
+
+Run cmake -D SFML_STATIC_LIBRARIES=TRUE ..
+
+Copy openal32.dll to /build
+
+Mac Specific:
+
+Run cmake .. -GXcode
